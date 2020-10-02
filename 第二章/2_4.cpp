@@ -2,6 +2,7 @@
 // Created by Administrator on 2020/10/2 0002.
 //
 #include <stdio.h>
+#include <string.h>
 
 typedef unsigned char *byte_pointer;
 
@@ -9,8 +10,10 @@ void show_bytes(byte_pointer start, size_t len) {
     size_t i;
     for (i = 0; i < len; i++) {
         printf(" %.2x", start[i]);
-        printf("\n")
+        printf("  ");
     }
+    printf("\n");
+
 }
 
 void show_int(int x) {
@@ -34,7 +37,8 @@ void test_show_bytes(int val){
     show_pointer(pval);
 }
 
-void main (){
-    test_show_bytes(12345);
-    return 0;
+int main (){
+    const char *s = "abcdef";
+    show_bytes((byte_pointer)s,strlen(s));
+    return 0;    return 0;
 }
