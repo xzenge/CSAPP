@@ -7,10 +7,8 @@ void testA(int x){
 }
 
 void testB(int x){
-    int b = x & 0x000000FF; //
-    int c = (~x) & 0xFFFFFF00;
-    int d = c + b;
-    printf("%x",d);
+    int b = x ^ ~0xff;
+    printf("%x",b);
     printf("\n");
 }
 
